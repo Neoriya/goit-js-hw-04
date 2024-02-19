@@ -1,18 +1,15 @@
 function calcAverageCalories(days) {
-  const daysCount = [];
-  for (const oneDay of days) {
-    daysCount.push(oneDay.day);
-  }
-  const caloriesCount = [];
-  for (const oneCaloria of days) {
-    caloriesCount.push(oneCaloria.calories);
+  const caloriesArray = [];
+  for (const oneDayCalories of days) {
+    caloriesArray.push(oneDayCalories.calories);
   }
   let caloriesSum = 0;
-  for (const caloria of caloriesCount) {
+  for (const caloria of caloriesArray) {
     caloriesSum += caloria;
   }
-  let averageCalories = caloriesSum / daysCount.length;
-  return daysCount.length < 1 ? (averageCalories = 0) : averageCalories;
+  return caloriesArray.length < 1
+    ? (caloriesSum = 0)
+    : caloriesSum / caloriesArray.length;
 }
 
 console.log(
